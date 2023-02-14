@@ -1,4 +1,7 @@
 function handleEditProfile() {
+
+    // new datepicker('#birthday');
+
     // getting value form placeholder to edit
 
     var name = document.getElementById('name').textContent
@@ -15,6 +18,8 @@ function handleEditProfile() {
 
     document.getElementById('edit-view').style.display = 'block'
     document.getElementById('display-view').style.display = 'none'
+
+    
 }
 
 function handleUpdateProfile() {
@@ -25,6 +30,15 @@ function handleUpdateProfile() {
 
     var updatedEmail = document.getElementById('input-email').value
     var email = document.getElementById('email')
+    if (validator.isEmail(updatedEmail)) {
+        email.textContent = updatedEmail
+    }
+    else 
+    {
+        alert("Invalid email format !!")
+    }
+
+
 
     var updatedInterest = document.getElementById('input-interest').value
     var interest = document.getElementById('interest')
